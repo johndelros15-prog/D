@@ -1,3 +1,11 @@
+// Speed control variables - higher numbers = slower falling
+const SPEED_MULTIPLIER = 2; // 2x slower, change to 3 for even slower, etc.
+
+// Use these variables in your animation durations
+const HEART_DURATION = 6 * SPEED_MULTIPLIER; // 12s if multiplier is 2
+const TULIP_DURATION = 3 * SPEED_MULTIPLIER; // 6s if multiplier is 2
+const CONFETTI_DURATION = 3 * SPEED_MULTIPLIER; // 6s if multiplier is 2
+const FIELD_TULIP_DURATION = 2 * SPEED_MULTIPLIER; // 4s if multiplier is 2
 // Create floating hearts
 function createHeart() {
     const heart = document.createElement('div');
