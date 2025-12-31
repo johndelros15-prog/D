@@ -1,0 +1,391 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Floating hearts */
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    color: #ff6b9d;
+    font-size: 20px;
+    animation: float 6s ease-in-out infinite;
+    opacity: 0.7;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+        opacity: 1;
+    }
+}
+
+/* Fireworks */
+.fireworks-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.firework {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    animation: firework 1s ease-out forwards;
+}
+
+@keyframes firework {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(20);
+        opacity: 0;
+    }
+}
+
+/* Letter styling */
+.letter-wrapper {
+    position: relative;
+    margin-top: 50px;
+}
+
+.envelope {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 40px;
+    background: #e74c3c;
+    border-radius: 5px;
+    z-index: 5;
+    animation: pulse 2s infinite;
+}
+
+.envelope-flap {
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 15px solid #c0392b;
+}
+
+.envelope-body {
+    width: 100%;
+    height: 100%;
+    background: #e74c3c;
+    border-radius: 5px;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        transform: translateX(-50%) scale(1.1);
+    }
+}
+
+.letter {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.letter-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5em;
+    color: #e74c3c;
+    margin-bottom: 10px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #e74c3c;
+    }
+    to {
+        text-shadow: 0 0 20px #e74c3c, 0 0 30px #e74c3c;
+    }
+}
+
+.date {
+    color: #7f8c8d;
+    font-size: 0.9em;
+}
+
+.letter-content {
+    line-height: 1.8;
+    color: #2c3e50;
+}
+
+.letter-content p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.highlight {
+    background: linear-gradient(120deg, #ffeaa7 0%, #fab1a0 100%);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.love-section, .missing-section, .apology-section, .new-year-section {
+    margin: 40px 0;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.love-section h2, .missing-section h2, .apology-section h2 {
+    color: #e74c3c;
+    margin-bottom: 15px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8em;
+}
+
+.love-poem {
+    background: rgba(255, 182, 193, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.love-poem p {
+    margin: 5px 0;
+    text-align: center;
+    font-style: italic;
+}
+
+.missing-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.missing-section li {
+    margin: 10px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.missing-section li:before {
+    content: "💝";
+    position: absolute;
+    left: 0;
+}
+
+.apology-list {
+    background: rgba(255, 182, 193, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.apology-list p {
+    margin: 8px 0;
+    font-style: italic;
+    text-align: center;
+}
+
+.new-year-section {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+    text-align: center;
+}
+
+.new-year-title {
+    font-size: 2.5em;
+    color: #e74c3c;
+    margin-bottom: 20px;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.final-message {
+    margin-top: 30px;
+}
+
+.i-love-you {
+    font-size: 3em;
+    color: #e74c3c;
+    font-family: 'Dancing Script', cursive;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.signature {
+    text-align: right;
+    margin-top: 40px;
+    font-style: italic;
+}
+
+.signature-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+    color: #e74c3c;
+    margin-top: 10px;
+}
+
+/* Interactive buttons */
+.tulip-button, .music-button {
+    position: fixed;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.tulip-button {
+    bottom: 30px;
+    left: 30px;
+}
+
+.music-button {
+    bottom: 30px;
+    right: 30px;
+}
+
+.tulip-button:hover, .music-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Tulip animation */
+.tulip {
+    position: fixed;
+    font-size: 50px;
+    animation: tulipFloat 3s ease-in-out forwards;
+    pointer-events: none;
+    z-index: 50;
+}
+
+@keyframes tulipFloat {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .letter {
+        padding: 20px;
+    }
+    
+    .title {
+        font-size: 2em;
+    }
+    
+    .i-love-you {
+        font-size: 2em;
+    }
+    
+    .tulip-button, .music-button {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+      }
+      
