@@ -102,7 +102,7 @@ let musicStarted = false;          // must be OUTSIDE the handler
 document.addEventListener('scroll', () => {
   if (!musicStarted) {
     const audio = document.getElementById('bgMusic');
-    audio.muted = false;           // remove mute
+    audio.muted = true;           // remove mute
     audio.volume = 0.4;
     audio.play().catch(() => {});
     musicStarted = true;           // flag so it runs once
