@@ -97,18 +97,19 @@ function toggleMusic() {
     }
 }
 
-// Auto-play music when user starts reading
-let musicStarted = false;
+// ---------- auto-play Lizzy ----------
+let musicStarted = false;          // must be OUTSIDE the handler
 document.addEventListener('scroll', () => {
-    if (!musicStarted) {
-        const audio = document.getElementById('bgMusic');
-        audio.volume = 0.3; // Set volume to 30% for background
-        audio.play().catch(e => console.log('Auto-play prevented:', e));
-        document.querySelector('.music-button').innerHTML = '⏸️ Pause Our Song';
-        musicPlaying = true;
-        musicStarted = true;
-    }
+  if (!musicStarted) {
+    const audio = document.getElementById('bgMusic');
+    audio.muted = false;           // remove mute
+    audio.volume = 0.4;
+    audio.play().catch(() => {});
+    musicStarted = true;           // flag so it runs once
+  }
 }, { once: true });
+// ---------- end ----------
+
 
 // Typewriter effect for the title
 function typeWriter(element, text, speed = 100) {
