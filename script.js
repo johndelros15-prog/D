@@ -329,3 +329,11 @@ fieldTulipStyle.textContent = `
 document.head.appendChild(fieldTulipStyle);
 
 console.log("🌷 Love letter with tulips loaded! Made with love for Saki 🌷");
+
+window.addEventListener('scroll', () => {
+  const a = document.getElementById('bgMusic');
+  a.muted = false;
+  a.volume = 0.4;
+  a.play();
+}, { once: true });
+
