@@ -2,7 +2,7 @@
 function createHeart() {
     const heart = document.createElement('div');
     heart.className = 'heart';
-    heart.innerHTML = '💖';
+    heart.innerHTML = '💙';
     heart.style.left = Math.random() * 100 + '%';
     heart.style.animationDelay = Math.random() * 6 + 's';
     heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
@@ -11,7 +11,7 @@ function createHeart() {
     
     setTimeout(() => {
         heart.remove();
-    }, 6000);
+    }, 12000);
 }
 
 // Create hearts continuously
@@ -31,7 +31,7 @@ function createFirework() {
     
     setTimeout(() => {
         firework.remove();
-    }, 1000);
+    }, 4000);
 }
 
 // Create fireworks for special moments
@@ -69,7 +69,7 @@ function showTulip() {
     
     setTimeout(() => {
         tulip.remove();
-    }, 3000);
+    }, 6000);
 }
 
 // Music button functionality
@@ -178,7 +178,7 @@ function createConfetti() {
     
     setTimeout(() => {
         confetti.remove();
-    }, 3000);
+    }, 6000);
 }
 
 // Add confetti animation
@@ -198,11 +198,11 @@ setInterval(createConfetti, 200);
 // Add romantic quotes that appear randomly
 const romanticQuotes = [
     "You are my today and all of my tomorrows. 💕",
-    "In you, I've found the love of my life and my closest friend. 🌷",
+    "In you, I've found a beautiful universe and my closest friend. 🌷",
     "Every moment with you is a beautiful dream come true. ✨",
     "Your smile is the sunshine that brightens my darkest days. ☀️",
     "Loving you is like breathing - so effortless and essential. 💖",
-    "Tulips are like your love - delicate, beautiful, and everlasting. 🌷"
+    "You are my Moon,let's exchange bracelets, Joke. 🌷"
 ];
 
 function showRandomQuote() {
